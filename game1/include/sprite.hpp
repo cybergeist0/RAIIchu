@@ -16,6 +16,8 @@ public:
     int getWidth() const { return width; }
     int getHeight() const { return height; }
     
+    bool collidesWith(const Sprite& other) const;
+    
 private:
     const uint8_t* bitmap_data;
     int width;

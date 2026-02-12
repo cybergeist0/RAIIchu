@@ -44,3 +44,10 @@ void Sprite::drawScaled(ILI9341_TFT& display, float scale) {
         }
     }
 }
+
+bool Sprite::collidesWith(const Sprite& other) const {
+    return x_pos < other.x_pos + other.width &&
+           x_pos + width > other.x_pos &&
+           y_pos < other.y_pos + other.height &&
+           y_pos + height > other.y_pos;
+}
