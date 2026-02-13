@@ -20,7 +20,8 @@ private:
     T y;
 };
 
-// Template implementations
+// dont ask
+
 template<typename T>
 Vector2D<T>::Vector2D() : x(0), y(0) {}
 
