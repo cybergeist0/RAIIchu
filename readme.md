@@ -1,4 +1,4 @@
-# RAIIchu
+# Raijin
 Open-source and customizable game development platform built around a Raspberry Pi Pico.
 *This project is very much still in development.*
 
