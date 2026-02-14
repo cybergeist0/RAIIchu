@@ -6,12 +6,18 @@ add_executable(game1
         collider.cpp
         screen.cpp
         xpt2046.c
+        audio_channel.cpp
 )
 
 add_executable(touch_test
         touch_test.cpp
         screen.cpp
         xpt2046.c
+)
+
+add_executable(buzzer_test
+        buzzer_test.cpp
+        audio_channel.cpp
 )
 
 pico_set_program_name(game1 "game1")
@@ -23,9 +29,13 @@ pico_enable_stdio_usb(game1 1)
 pico_enable_stdio_uart(touch_test 0)
 pico_enable_stdio_usb(touch_test 1)
 
+pico_enable_stdio_uart(buzzer_test 0)
+pico_enable_stdio_usb(buzzer_test 1)
+
 target_link_libraries(game1
         pico_stdlib
         hardware_spi
+        hardware_pwm
         displaylib_16
 )
 
@@ -33,6 +43,11 @@ target_link_libraries(touch_test
         pico_stdlib
         hardware_spi
         displaylib_16
+)
+
+target_link_libraries(buzzer_test
+        pico_stdlib
+        hardware_pwm
 )
 
 target_include_directories(game1 PRIVATE
@@ -45,5 +60,10 @@ target_include_directories(touch_test PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/include
         ../displaylib_16bit_PICO/include)
 
+target_include_directories(buzzer_test PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}/include)
+
 pico_add_extra_outputs(game1)
 pico_add_extra_outputs(touch_test)
+pico_add_extra_outputs(buzzer_test)

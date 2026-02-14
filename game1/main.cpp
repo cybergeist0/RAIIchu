@@ -4,8 +4,9 @@
 #include "screen.hpp"
 #include "sprite.hpp"
 #include "assets.hpp"
+#include "audio_channel.hpp"
 
-#define LED_PIN 25
+#define BUZZER_PIN 14
 #define MAX_COINS 5
 #define COIN_SPAWN_INTERVAL_MS 800
 
@@ -19,9 +20,9 @@ int main() {
     stdio_init_all();
     sleep_ms(1000);
 
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
-    gpio_put(LED_PIN, 0);
+    // Initialize audio
+    AudioChannel audio(BUZZER_PIN);
+    audio.init();
 
     Screen screen;
     ILI9341_TFT &display = screen.display();
@@ -108,13 +109,12 @@ int main() {
                     coins[i].active = false;
                     display.fillRect(coins[i].sprite->getX(), coins[i].sprite->getY(), 
                                     SILVER_COIN_WIDTH, SILVER_COIN_HEIGHT, display.C_BLACK);
+                    audio.playCoin();  // Play sound effect!
                 } else {
                     coins[i].sprite->draw(display);
                 }
             }
         }
-        
-        gpio_put(LED_PIN, collision_detected ? 1 : 0);
         
         player.draw(display);
         
