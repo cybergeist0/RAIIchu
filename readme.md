@@ -14,4 +14,4 @@ Open-source and customizable game development platform built around a Raspberry 
 ## TODO
 1. Finish the first game
 2. Actually use the SD Card reader to save sprites or audio files?
-3. Multiplayer support using LoRa???
+3. Multiplayer support using SX162 LoRa???
