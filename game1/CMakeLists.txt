@@ -37,6 +37,7 @@ target_link_libraries(game1
         pico_stdlib
         hardware_spi
         hardware_pwm
+        pico_lora_radio
         displaylib_16
 )
 

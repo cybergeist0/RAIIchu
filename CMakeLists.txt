@@ -35,4 +35,5 @@ pico_sdk_init()
 
 add_subdirectory(displaylib_16bit_PICO/library displaylib)
 
+add_subdirectory(lora)
 add_subdirectory(game1)

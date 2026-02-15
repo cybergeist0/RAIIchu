@@ -1,3 +1,6 @@
 [submodule "displaylib_16bit_PICO"]
 	path = displaylib_16bit_PICO
 	url = https://github.com/gavinlyonsrepo/displaylib_16bit_PICO.git
+[submodule "lora/sx126x_driver"]
+	path = lora/sx126x_driver
+	url = https://github.com/Lora-net/sx126x_driver

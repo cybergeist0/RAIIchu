@@ -11,7 +11,10 @@ Open-source and customizable game development platform built around a Raspberry 
 * Basic (blocking) SFX through an `AudioChannel` but could possibly be offloaded to a second thread
 * Editors in `/editors` for custom sprites and PWM tunes
 
+## Under Development
+1. Custom SX1262 LoRa `RadioStream` communication suite with encryption
+2. Adding scores and horizontal obstacles to `game1`
+
 ## TODO
-1. Finish the first game
-2. Actually use the SD Card reader to save sprites or audio files?
-3. Multiplayer support using SX162 LoRa???
+1. Actually use the SD Card reader to save sprites or audio files?
+2. Multiplayer support using LoRa???
